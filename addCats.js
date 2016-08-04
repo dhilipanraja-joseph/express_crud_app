@@ -14,7 +14,7 @@ module.exports = function(catObj,cb){
 
       catObj['id'] = uuid.v4();
       cats.push(catObj);
-
+      cb(null,cats)
     }
 
     fs.writeFile(dataFilePath,JSON.stringify(cats),
@@ -24,7 +24,7 @@ module.exports = function(catObj,cb){
     );
   });
 
-  
+
     // cb(null , data);
     // console.log(data);
 

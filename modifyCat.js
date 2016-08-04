@@ -17,7 +17,7 @@ module.exports = function(arr,cb){
       obj['id'] = uuid.v4();
       cats[index] = obj;
       // cats.push(catObj);
-
+      cb(err,cats);
     }
 
     fs.writeFile(dataFilePath,JSON.stringify(cats),

@@ -21,6 +21,7 @@ module.exports = function(id,cb){
 
       // console.log('index',index);
       // cats.push(catObj);
+      cb(null,cats);
 
     }
 

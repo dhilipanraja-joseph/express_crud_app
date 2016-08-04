@@ -29,11 +29,11 @@ app.route('/cats').get((req,res,err) => {
 
     }).post((req,res,err)=>{
 
-        addCats(req.body,(err)=>{
+        addCats(req.body,(err,data)=>{
 
           if(err) return res.status(400).send(err);
 
-          else res.send('Cat Added');
+          else res.send(data);
         });
 
     });
@@ -42,21 +42,21 @@ app.route('/cats').get((req,res,err) => {
 
         var reqA=[req.params.id,req.body];
 
-        modifyCat(reqA,(err)=>{
+        modifyCat(reqA,(err,data)=>{
 
           if(err) return res.status(400).send(err);
 
-          else res.send('Cat Modified');
+          else res.send(data);
         });
     });
 
     app.delete('/cats/:id',(req,res)=>{
 
-          deleteCats(req.params.id,(err)=>{
+          deleteCats(req.params.id,(err,data)=>{
 
             if(err) return res.status(400).send(err);
 
-            else res.send('Cat deleted');
+            else res.send(data);
           });
 
         // res.send('cat deleted');
